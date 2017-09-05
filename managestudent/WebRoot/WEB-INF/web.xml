@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	 <filter>
+  <display-name>encoding</display-name>
+  <filter-name>encoding</filter-name>
+  <filter-class>msc.util.EncodingFilter</filter-class>
+ </filter>
+ <filter-mapping>
+ <filter-name>encoding</filter-name>
+ <url-pattern>/*</url-pattern>
+ </filter-mapping>
+ 
+
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>login_slt</servlet-name>
+    <servlet-class>slt.login_slt</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>student_slt</servlet-name>
+    <servlet-class>slt.student_slt</servlet-class>
+  </servlet>
+ <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DatabaseConnect</servlet-name>
+    <servlet-class>DBC.DatabaseConnect</servlet-class>
+  </servlet>
+
+
+
+  <servlet-mapping>
+    <servlet-name>login_slt</servlet-name>
+    <url-pattern>/login_slt</url-pattern>
+  </servlet-mapping>	
+  <servlet-mapping>
+    <servlet-name>student_slt</servlet-name>
+    <url-pattern>/student_slt</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DatabaseConnect</servlet-name>
+    <url-pattern>/DatabaseConnect</url-pattern>
+  </servlet-mapping>	
+ 
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <!-- 数据源 -->
+     <resource-ref>
+  	    <description>DB Connection</description>   
+    	<res-ref-name>jdbc/mysqla</res-ref-name>   
+    	<res-type>javax.sql.DataSource</res-type>   
+    	<res-auth>Container</res-auth>   
+ 	 </resource-ref>
+ 	<resource-ref>
+  	    <description>DB Connection</description>   
+    	<res-ref-name>jdbc/mysqlb</res-ref-name>   
+    	<res-type>javax.sql.DataSource</res-type>   
+    	<res-auth>Container</res-auth>   
+ 	 </resource-ref>
+</web-app>
